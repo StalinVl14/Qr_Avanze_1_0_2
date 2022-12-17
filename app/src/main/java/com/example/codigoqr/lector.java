@@ -25,7 +25,7 @@ public class lector extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lector);
         btnCamara = findViewById(R.id.btnCamera);
         imgView = findViewById(R.id.imageView);
 

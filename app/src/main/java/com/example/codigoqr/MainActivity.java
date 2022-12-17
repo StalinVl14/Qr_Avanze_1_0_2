@@ -40,33 +40,12 @@ public class MainActivity extends AppCompatActivity {
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DatosQr .class);
+                startActivity(i);
 
-
-                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                integrator.setPrompt("Lector - QR");
-                integrator.setCameraId(0);
-                integrator.setBeepEnabled(true);
-                integrator.setBarcodeImageEnabled(true);
-                integrator.initiateScan();
             }
         });
     }
-     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
 
-        IntentResult result  = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-
-        if (result !=null){
-            if(result.getContents()== null){
-                Toast.makeText(this,"Lectura cancelada", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this,result.getContents(), Toast.LENGTH_LONG).show();
-                txtResultado.setText(result.getContents());
-            }
-        }else {
-
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-     }
 
 }
